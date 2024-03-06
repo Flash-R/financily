@@ -1,9 +1,11 @@
+import React from "react"
 import SignUpSignIn from "../Components/SignUpSignIn"
-import 
+
+
 function Signup() {
   return (
-    <div>
-      <SignUpSignIngnIn/>
+    <div className="wrapper">
+      <SignUpSignIn/>
     </div>
   )
 }

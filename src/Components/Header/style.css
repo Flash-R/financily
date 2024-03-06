@@ -1,0 +1,25 @@
+.navbar{
+    background-color: var(--theme);
+    padding: 0.1rem 0.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .title{
+    color: var(--white);
+    font-weight: 600;
+}
+
+.navbar .link{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.navbar .link:hover{
+    opacity: 1;
+    transition: all 0.3s;
+}

@@ -1,3 +1,15 @@
-.signupForm{
-    
+.signupForm-wrapper{
+    width: 70%;
+    max-width: 600px;
+    box-shadow: 1px 2px 3px 5px var(--gray-shadow);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.title{
+    margin: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center ;
 }
