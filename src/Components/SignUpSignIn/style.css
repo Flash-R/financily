@@ -13,3 +13,8 @@
     font-size: 1rem;
     text-align: center ;
 }
+.p-login-signup{
+    text-align: center;
+    font-weight: 300;
+    cursor: pointer;
+}
