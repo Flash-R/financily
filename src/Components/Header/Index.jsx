@@ -28,7 +28,7 @@ function Header() {
   }
   return (
     <div className='navbar'>
-      <p className='title'>Header</p>
+      <p className='title'>Financely</p>
       {user &&
         <p className='title link' onClick={logout}>Logout</p>
       }

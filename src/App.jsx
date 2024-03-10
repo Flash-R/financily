@@ -8,8 +8,11 @@ import "./App.css"
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from "react-firebase-hooks/auth"
+import { auth } from "./firebase"
 
 function App() {
+  const [user] = useAuthState(auth)
 
   return (
     <div>
@@ -18,7 +21,11 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Signup/>}/>
+        {user ? 
         <Route path="/Dashboard" element={<Dashboard/>}/>
+        :
+        <Route path="/" element={<Signup/>}/>
+        }
       </Routes>
       </>
     </div>
