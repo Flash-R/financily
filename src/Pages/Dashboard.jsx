@@ -8,6 +8,7 @@ import { auth , db } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { addDoc, collection, getDoc, getDocs, query } from 'firebase/firestore';
 import moment from 'moment/moment';
+import TransactionTable from '../Components/TransactionTable/Index';
 
 function Dashboard() {
   const [isIncomeModalVisible, setIsIncomeModalVisible] = useState(false);
@@ -15,6 +16,7 @@ function Dashboard() {
   const [user] = useAuthState(auth);
   const [loading, setLoading] = useState(false);
   const [transactions, setTransactions] = useState([]);
+  
 
   // use States for calculating balances
   const [income, setIncome] = useState(0);
@@ -150,6 +152,8 @@ function Dashboard() {
           hideIncomeModal={hideExpenseModal}
           onFinish={onFinish}
         />
+        
+        <TransactionTable transactions={transactions} />
         {/* <Modal 
           visible={isIncomeModalVisible}
           onCancel={hideIncomeModal}
