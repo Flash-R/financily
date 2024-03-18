@@ -49,14 +49,14 @@ function Dashboard() {
     console.log("On Finish", values, type)
   }
 
-  async function addTransaction(transaction){
+  async function addTransaction(transaction, many){
     try {
       const docRef = await addDoc(
         collection(db,`users/${user.uid}/transaction`),
         transaction
       );
       console.log("Transaction Added with Id", docRef.id, "With user ID", user.uid);
-      toast.success("Transaction added")
+      if(!many) toast.success("Transaction added")
 
       
       // create a new arr to update the transactions use state
@@ -67,8 +67,8 @@ function Dashboard() {
 
       
     } catch (error) {
-      console.log(error)
-      toast.error( error)
+      // console.log(error)
+      if(!many)toast.error( error)
     }
   }
 
@@ -153,7 +153,10 @@ function Dashboard() {
           onFinish={onFinish}
         />
         
-        <TransactionTable transactions={transactions} />
+        <TransactionTable 
+          transactions={transactions}
+          addTransaction={addTransaction}
+          fetchTransactions={fetchTransactions} />
         {/* <Modal 
           visible={isIncomeModalVisible}
           onCancel={hideIncomeModal}

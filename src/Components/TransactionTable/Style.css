@@ -1,0 +1,46 @@
+.search-input{
+    display: flex;
+    flex-direction: row;
+    margin: .3rem .5rem;
+    padding: 5px 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+
+.search-input input{
+    width: 100%;
+    margin-left: 5px ;
+    border: none;
+}
+.search-input input:focus{
+    outline: none;
+}
+
+.table-design{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: .3rem .5rem;
+    padding: 5px 5px;
+}
+.button-group{
+    display: flex;
+    flex-direction: row;
+}
+.btn{
+    border: 1px solid blue;
+    color: #0847bd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-solid{
+    background-color: #0847bd;
+    color: white;
+    margin-left:10px;
+}
+.input-csv-group{
+    width: 100px;
+}
