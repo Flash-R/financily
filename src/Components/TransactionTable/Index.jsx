@@ -32,15 +32,14 @@ function TransactionTable({transactions,addTransaction, fetchTransactions}) {
           key: 'type',
         },
         {
-          title: 'Tag',
-          dataIndex: 'tag',
-          key: 'tag',
+          title: 'Tags',
+          dataIndex: 'tags',
+          key: 'tags',
         }
       ];
 
   let filteredTransaction = transactions.filter(
-  (item) => item.name.toLowerCase().includes(search.toLowerCase())
-  && item.type.includes(typeFilter));
+  (item) => item.name.toLowerCase().includes(search.toLowerCase()) && item.type.includes(typeFilter));
   // Activating the sorting by mount and date using the filtered transaction
   let sortedTransactions = filteredTransaction.sort(
     (a, b) => {
@@ -121,7 +120,7 @@ function TransactionTable({transactions,addTransaction, fetchTransactions}) {
         </Radio.Group>
         <div className="button-group">
           <button className='btn' onClick={exportCsv}>Export To Csv</button>
-          <label for="file-csv" className='btn btn-solid'>Import From Csv</label>
+          <label htmlFor="file-csv" className='btn btn-solid'>Import From Csv</label>
           <input type="file" 
             accept='.csv' 
             id='file-csv' 
