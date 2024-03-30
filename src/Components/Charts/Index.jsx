@@ -8,13 +8,20 @@ function ChartComponent({sortedTransactions}) {
 
     const expenseData = sortedTransactions.filter((item)=>{
       if(item.type === "Expense"){
-        return {tags :item.tags, amount: item.amount}
+        return {tags:item.tags, amount: item.amount}
       }
     })
-
-    // const exactExpenseData = expenseData.reduce((acc,item)=>{
-    //   acc[item.tag] = item.amount;
-    //   return acc;
+    console.log(expenseData)
+    const exactExpenseData = expenseData.reduce((acc,obj)=>{
+      let key = obj.tags;
+      if(!acc[key]){
+        acc[key] = {tags : obj.tags, amount: obj.amount}
+      }else{
+        acc[key].amount += obj.amount;
+      }
+      return acc;
+    })
+    console.log(exactExpenseData)
 
     
       const config = {
@@ -24,7 +31,7 @@ function ChartComponent({sortedTransactions}) {
         yField: 'Amount',
       };
       const expenseConfig = {
-        data: expenseData,
+        data: Object.values(exactExpenseData),
         width: 400,
         angleField: 'amount',
         colorField: 'tags',
