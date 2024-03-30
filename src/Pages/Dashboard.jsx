@@ -164,16 +164,7 @@ function Dashboard() {
           transactions={transactions}
           addTransaction={addTransaction}
           fetchTransactions={fetchTransactions} />
-        {/* <Modal 
-          visible={isIncomeModalVisible}
-          onCancel={hideIncomeModal}
-          footer={null}
-        >Income</Modal>
-        <Modal 
-          visible={isExpenseModalVisible}
-          onCancel={hideExpenseModal}
-          footer={null}
-        >Expense</Modal> */}
+        
       </div>
     }
     </>
