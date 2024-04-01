@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Cards from '../Components/Cards'
 import AddExpense from '../Components/Modal/AddExpense';
-import AddIncome from '../Components/Modal/AddIncome';
+import AddIncome from '../Components/Modal/addIncome';
 import { toast } from 'react-toastify';
 import { auth , db } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth'
