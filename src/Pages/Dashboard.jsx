@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Cards from '../Components/Cards'
 import AddExpense from '../Components/Modal/AddExpense';
-import AddIncome from '../Components/Modal/addIncome.jsx';
+import IncomeAdd from '../Components/Modal/IncomeAdd.jsx';
 import { toast } from 'react-toastify';
 import { auth , db } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -146,7 +146,7 @@ function Dashboard() {
           hideIncomeModal={hideIncomeModal}
           hideExpenseModal={hideExpenseModal}
         />
-        <AddIncome 
+        <IncomeAdd 
           isIncomeModalVisible={isIncomeModalVisible}
           hideIncomeModal={hideIncomeModal}
           onFinish={onFinish}
